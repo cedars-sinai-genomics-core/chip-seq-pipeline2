@@ -16,8 +16,10 @@ echo "=== Installing pipeline's Conda environments ==="
 
 if [[ "$1" == mamba ]]; then
   conda install mamba -y -c conda-forge
-  mamba create -n ${CONDA_ENV_PY3} --file ${REQ_TXT_PY3} -y -c defaults -c r -c bioconda -c conda-forge
-  mamba create -n ${CONDA_ENV_PY2} --file ${REQ_TXT_PY2} -y -c defaults -c r -c bioconda -c conda-forge
+  mamba create -p /common/genomics-core/apps/.conda/envs/${CONDA_ENV_PY3} --file ${REQ_TXT_PY3} -y -c defaults -c r -c bioconda -c conda-forge
+  mamba create -p /common/genomics-core/apps/.conda/envs/${CONDA_ENV_PY2} --file ${REQ_TXT_PY2} -y -c defaults -c r -c bioconda -c conda-forge
+#  mamba create -n ${CONDA_ENV_PY3} --file ${REQ_TXT_PY3} -y -c defaults -c r -c bioconda -c conda-forge
+#  mamba create -n ${CONDA_ENV_PY2} --file ${REQ_TXT_PY2} -y -c defaults -c r -c bioconda -c conda-forge
 else
   echo
   echo "If it takes too long to resolve conflicts, then try with mamba."

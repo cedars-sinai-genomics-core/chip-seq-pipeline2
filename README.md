@@ -1,7 +1,16 @@
+# For AGCT Core
+
+We have installed this pipeline on the HPC and it can be run with three inputs:
+
+1.	A JSON file specifying the paths to the FASTQ files and the reference genome to use. Within this file you can specify replicates and (optionally) input controls. An example version that will run on the Cedars HPC is located in `example_input_json/AGCT_Example.json`.
+2.	The FASTQ/FASTQ.gz files specified in the JSON file above.
+3.	The reference genome files. Several of these references with their relevant indices are already downloaded and built. They are located in `/common/genomics-core/reference/ChIP/` and include human (hg38) and mouse (mm10).
+
+The pipeline itself is documented below
+
 # ENCODE Transcription Factor and Histone ChIP-Seq processing pipeline
 
 [![CircleCI](https://circleci.com/gh/ENCODE-DCC/chip-seq-pipeline2/tree/master.svg?style=svg)](https://circleci.com/gh/ENCODE-DCC/chip-seq-pipeline2/tree/master)
-
 
 ## Important notice for Conda users
 

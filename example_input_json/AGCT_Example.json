@@ -1,0 +1,28 @@
+{
+    "chip.genome_tsv" : "/common/genomics-core/reference/ChIP/hg38/hg38.tsv",
+    "chip.paired_end" : false,
+
+    "chip.fastqs_rep1_R1" : [ "/common/genomics-core/data/GenomicsCloud/Karlstaedt_Anja/AK-12854--05--26--2021/FASTQ/AK_Sample1_S1_R1_001.fastq.gz" ],
+    "chip.fastqs_rep2_R1" : [ "/common/genomics-core/data/GenomicsCloud/Karlstaedt_Anja/AK-12854--05--26--2021/FASTQ/AK_Sample2_S2_R1_001.fastq.gz" ],
+    "chip.fastqs_rep3_R1" : [ "/common/genomics-core/data/GenomicsCloud/Karlstaedt_Anja/AK-12854--05--26--2021/FASTQ/AK_Sample3_S3_R1_001.fastq.gz" ],
+    "chip.fastqs_rep4_R1" : [ "/common/genomics-core/data/GenomicsCloud/Karlstaedt_Anja/AK-12854--05--26--2021/FASTQ/AK_Sample4_S4_R1_001.fastq.gz" ],
+    "chip.fastqs_rep5_R1" : [ "/common/genomics-core/data/GenomicsCloud/Karlstaedt_Anja/AK-12854--05--26--2021/FASTQ/AK_Sample5_S5_R1_001.fastq.gz" ],
+    "chip.fastqs_rep6_R1" : [ "/common/genomics-core/data/GenomicsCloud/Karlstaedt_Anja/AK-12854--05--26--2021/FASTQ/AK_Sample6_S6_R1_001.fastq.gz" ],
+
+    "chip.ctl_fastqs_rep1_R1" : [ "/common/genomics-core/data/GenomicsCloud/Karlstaedt_Anja/AK-12854--05--26--2021/FASTQ/AK_Sample14_S1_R1_001.fastq.gz" ],
+    "chip.ctl_fastqs_rep2_R1" : [ "/common/genomics-core/data/GenomicsCloud/Karlstaedt_Anja/AK-12854--05--26--2021/FASTQ/AK_Sample15_S2_R1_001.fastq.gz" ],
+    "chip.ctl_fastqs_rep3_R1" : [ "/common/genomics-core/data/GenomicsCloud/Karlstaedt_Anja/AK-12854--05--26--2021/FASTQ/AK_Sample16_S3_R1_001.fastq.gz" ],
+    "chip.ctl_fastqs_rep4_R1" : [ "/common/genomics-core/data/GenomicsCloud/Karlstaedt_Anja/AK-12854--05--26--2021/FASTQ/AK_Sample17_S4_R1_001.fastq.gz" ],
+    "chip.ctl_fastqs_rep5_R1" : [ "/common/genomics-core/data/GenomicsCloud/Karlstaedt_Anja/AK-12854--05--26--2021/FASTQ/AK_Sample18_S5_R1_001.fastq.gz" ],
+    "chip.ctl_fastqs_rep6_R1" : [ "/common/genomics-core/data/GenomicsCloud/Karlstaedt_Anja/AK-12854--05--26--2021/FASTQ/AK_Sample19_S6_R1_001.fastq.gz" ],
+
+    "chip.title" : "AK12854-IP",
+    "chip.description" : "SE ChIP-seq Analysis on IP Samples.",
+    "chip.mito_chr_name" : "chrM",
+    "chip.pipeline_type" : "histone",
+    "chip.aligner" : "bowtie2",
+    "chip.always_use_pooled_ctl" : true,
+    "chip.align_only" : false,
+    "chip.true_rep_only" : false
+
+}
