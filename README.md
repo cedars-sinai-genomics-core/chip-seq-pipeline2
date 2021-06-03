@@ -3,22 +3,29 @@
 ## Inputs
 We have installed this pipeline on the HPC and it can be run with three inputs:
 
-1.	A JSON file specifying the paths to the FASTQ files and the reference genome to use. Within this file you can specify replicates and (optionally) input controls. An example version that will run on the Cedars HPC is located in `example_input_json/AGCT_Example.json`.
+1.	A JSON file specifying:
+	-	The paths to the FASTQ/FASTQ.gz files for IP and (optionally) input control samples
+	-	The path to the reference genome TSV to use.
+	-	Information about whether it is a TF or histone ChIP and if the libraries are PE or SE.
 2.	The FASTQ/FASTQ.gz files specified in the JSON file above.
-3.	The reference genome files. Several of these references with their relevant indices are already downloaded and built. They are located in `/common/genomics-core/reference/ChIP/` and include human (hg38) and mouse (mm10).
+3.	The reference genome files.
 
-For reference, there is an example script that can be used to submit the pipeline to the queue in `scripts/AGCT_Example.sh`.
 
 ## Notes
 
+-	An example JSON that will run on the Cedars HPC is located in `example_input_json/AGCT_Example.json`.
+-       You can specificy up to six replicates in the JSON file (one per line), and multiple FASTQs can be provided for each. They will be concatenated together.
+-	An example script that can be used to submit the pipeline to the queue is located in `scripts/AGCT_Example.sh`.
 -	The submission script (`scripts/AGCT_Example.sh`) will spawn many sub jobs, so it doesn't need much in terms of resources EXCEPT that it must remain active the entire time the pipeline is running, so the wall time is very long.
--	Previously, we had run v1.1.6 of this pipeline based on Singularity. For some reason that broke and Alex installed v1.9.0, which is conda based. The conda environments are located in `/common/genomics-core/apps/.conda/envs`. When you load anaconda3, it may not recognize this location as a possible one to find conda environments. You can check this by running `conda env list` once you have loaded the anaconda3 module. If the list does not include environments on the HPC, you'll need to modify `~/.condarc` to include 
+-	Several genome references with their relevant indices are already downloaded and built. They are located in `/common/genomics-core/reference/ChIP/` and include human (hg38) and mouse (mm10).
+-       The path to the reference genome TSV file specified in the JSON file will be used to extrapolate the location of the indices. If you use the pre-built indices, then nothing needs to be changed. If you build a new index, you'll need to make sure it contains everything in this directory.
+-	Previously, we had run v1.1.6 of this pipeline based on Singularity. For some reason that broke, and Alex installed v1.9.0, which is conda based. The conda environments are located in `/common/genomics-core/apps/.conda/envs`. When you load anaconda3, it may not recognize this location as a possible one to find conda environments. You can check this by running `conda env list` once you have loaded the anaconda3 module. If the list does not include environments on the HPC, you'll need to modify `~/.condarc` to include 
 ```{bash}
 envs_dirs:
   - /common/genomics-core/apps/.conda/envs
 ```
 
-The pipeline itself is documented below
+The pipeline itself is documented below.
 
 # ENCODE Transcription Factor and Histone ChIP-Seq processing pipeline
 
