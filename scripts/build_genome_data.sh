@@ -156,7 +156,7 @@ elif [[ "${GENOME}" == "mm10_chr19_chrM" ]]; then
     ENH="https://www.encodeproject.org/files/ENCFF580RGZ/@@download/ENCFF580RGZ.bed.gz"
   fi
 
-elif [[ "${GENOME}" == "YOUR_OWN_GENOME" ]]; then
+elif [[ "${GENOME}" == "Rnor6" ]]; then
   # Perl style regular expression to keep regular chromosomes only.
   # this reg-ex will be applied to peaks after blacklist filtering (b-filt) with "grep -P".
   # so that b-filt peak file (.bfilt.*Peak.gz) will only have chromosomes matching with this pattern
@@ -165,13 +165,12 @@ elif [[ "${GENOME}" == "YOUR_OWN_GENOME" ]]; then
   # use ".*", which means ALL CHARACTERS, if you want to keep all chromosomes
   # use "chr[\dXY]+" to allow chr[NUMBERS], chrX and chrY only
   # this is important to make your final output peak file (bigBed) work with genome browsers
-  REGEX_BFILT_PEAK_CHR_NAME=".*"
+  REGEX_BFILT_PEAK_CHR_NAME="[\dXY]+"
   # REGEX_BFILT_PEAK_CHR_NAME="chr[\dXY]+"
-
   # mitochondrial chromosome name (e.g. chrM, MT)
-  MITO_CHR_NAME="chrM"
+  MITO_CHR_NAME="MT"
   # URL for your reference FASTA (fasta, fasta.gz, fa, fa.gz, 2bit)
-  REF_FA="https://some.where.com/your.genome.fa.gz"
+  REF_FA="http://ftp.ensembl.org/pub/release-104/fasta/rattus_norvegicus/dna/Rattus_norvegicus.Rnor_6.0.dna.toplevel.fa.gz"
   # 3-col blacklist BED file to filter out overlapping peaks from b-filt peak file (.bfilt.*Peak.gz file).
   # leave it empty if you don't have one
   BLACKLIST=
