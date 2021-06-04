@@ -24,6 +24,9 @@ We have installed this pipeline on the HPC and it can be run with three inputs:
 envs_dirs:
   - /common/genomics-core/apps/.conda/envs
 ```
+## Quality Control
+
+The outputs of this pipleine are very messy until you run `Croo` to organize them. I have created a script to do this(`scripts/AGCT_Example_QC.sh`), but it needs several files paths to properly operate on the pipeline outputs. The script there is an example that cannot be run without modification to point to the appropriate qc.json files, name the replicates, title some plots, and know what experiments go together. It is provided as-is.
 
 The pipeline itself is documented below.
 
